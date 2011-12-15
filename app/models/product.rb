@@ -1,7 +1,10 @@
 class Product < ActiveRecord::Base
     default_scope :order => 'title'
+    has_many :wish_items
+
     has_many :line_items
-    before_destroy :ensure_not_references_by_any_line_item
+        before_destroy :ensure_not_referenced_by_any_line_item
+    has_many :wish_items
     
     private
     # ensure that there are no line items referencing this product

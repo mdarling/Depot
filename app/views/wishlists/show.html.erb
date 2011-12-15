@@ -1,0 +1,16 @@
+<div class="cart_title">Your Wishlist</div>
+<table>
+    <% @wishlist.wish_items.each do |item| %>
+        <tr>
+            <td><%= item.product.title %></td>
+            <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+	    <td><%= button_to 'Add to Cart', line_items_path(:product_id => item.product) %>
+        </tr>
+
+    <% end %>
+
+
+<table>
+<p>
+<%= button_to 'Empty wish list', @wishlist, :method => :delete, :confirm => 'Are you sure?' %>
+</p>
