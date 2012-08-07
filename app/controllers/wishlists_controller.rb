@@ -81,7 +81,7 @@ end
     @wishlist = current_wishlist
     @wishlist.destroy
 
-      session[:wishlist_id] = nil 
+      # session[:wishlist_id] = nil 
       #Wishlist.count -= 1
       
     respond_to do |format|
